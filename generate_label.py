@@ -30,7 +30,7 @@ def get_label(news_text):
     # tfidf_vectorizer = TfidfVectorizer()
     # data = tfidf_vectorizer.fit_transform([stemm])
 
-    vectorizer = joblib.load('tfidf_vectorizer')
+    vectorizer = joblib.load('tfidf_vectorizer1')
     model = joblib.load('nb_model')
 
     x_new = vectorizer.transform([stemm]).toarray()
