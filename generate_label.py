@@ -27,10 +27,10 @@ def get_label(news_text):
     stemmer = factory.create_stemmer()
     stemm = stemmer.stem(stopword)
 
-    # tfidf_vectorizer = TfidfVectorizer()
-    # data = tfidf_vectorizer.fit_transform([stemm])
+    tfidf_vectorizer = TfidfVectorizer()
+    data = tfidf_vectorizer.fit_transform([stemm])
 
-    vectorizer = joblib.load('tfidf_vectorizer1')
+    vectorizer = joblib.load('tfidf_vectorizer')
     model = joblib.load('nb_model')
 
     x_new = vectorizer.transform([stemm]).toarray()
